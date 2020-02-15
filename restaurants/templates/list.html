@@ -15,5 +15,20 @@
                 </ul>
             </a>
         {% endfor %}
+        <br>
+        {% for restaurant in restaurants  %}
+    <ul>
+        <li>
+            <h1>{{restaurant.name}}</h1>
+        </li>
+        <li>
+            <a href="{% url 'restaurant-delete' restaurant_id=restaurant.id %}">Delete</a>
+            <a href="{% url 'restaurant-update' restaurant_id=restaurant.id %}">update</a>
+            <a href="{% url 'restaurant-create'  %}">create</a>
+        </li>
+    </ul><br>
+        {% endfor %}
+
+
     </body>
 </html>
